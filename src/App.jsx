@@ -50,9 +50,9 @@ function App() {
         return <Contact />;
       case "#/faq":
         return <Faq />;
-      case "#/aarambh":
+      case "#/programs/aarambh":
         return <Aarambh />;
-      case "#/aaroh":
+      case "#/programs/aaroh":
         return <Aaroh />;
       case "#/about-us":
         return <AboutUs />;

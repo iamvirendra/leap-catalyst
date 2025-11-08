@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion"; // For smooth animations
 
-const Program = () => {
+const Aarambh = () => {
   return (
     <Box
       sx={{
@@ -304,4 +304,4 @@ const Program = () => {
   );
 };
 
-export default Program;
+export default Aarambh;
