@@ -14,13 +14,13 @@ const Footer = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const programs = ['Thrive', 'VSM'];
-  const resources = ['Blog', 'Contact'];
+  const programs = ['Aarambh 2.0', 'Aaroh'];
+  const resources = ['Blog', 'FAQ', 'Contact'];
   const locations = [{ name: 'Lucknow' }, { name: 'Gurugram' }];
   const socialLinks = [
-    { icon: LinkedIn, href: '#', name: 'LinkedIn' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Twitter, href: '#', name: 'Twitter' },
+    { icon: LinkedIn, href: 'https://www.linkedin.com/company/leap-catalyst/', name: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/leap.catalyst?igsh=MXJ3dHdjczEwYzE3NQ==', name: 'Instagram' },
+    { icon: Twitter, href: 'https://x.com/leapcatalyst?t=QGXG29nfk1_6Rw-V8vV63w&s=09', name: 'Twitter' },
   ];
 
   return (

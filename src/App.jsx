@@ -9,20 +9,19 @@ import Faq from "./pages/Faq";
 import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
 import AboutUs from "./pages/AboutUs";
+import Aarambh from "./pages/Aarambh";
+import Aaroh from "./pages/Aaroh";
 
 function App() {
-  const [route, setRoute] = useState(window.location.hash);
+  const [route, setRoute] = useState(window.location.hash.toLowerCase());
 
   useEffect(() => {
     const onHashChange = () => {
-      const newRoute = window.location.hash;
+      const newRoute = window.location.hash.toLowerCase();
       setRoute(newRoute);
-
-      // Scroll to top whenever route changes OR even if same route is clicked again
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    // Also handle clicks on same route (no hashchange event)
     const onLinkClick = (e) => {
       const href = e.target.closest("a")?.getAttribute("href");
       if (href && href.startsWith("#") && href === window.location.hash) {
@@ -39,8 +38,9 @@ function App() {
     };
   }, []);
 
- const getPage = () => {
+  const getPage = () => {
     if (route.startsWith("#/blog/")) return <BlogDetail />;
+
     switch (route) {
       case "#/blog":
         return <BlogList />;
@@ -50,6 +50,12 @@ function App() {
         return <Contact />;
       case "#/faq":
         return <Faq />;
+      case "#/aarambh":
+        return <Aarambh />;
+      case "#/aaroh":
+        return <Aaroh />;
+      case "#/about-us":
+        return <AboutUs />;
       default:
         return <Hero />;
     }

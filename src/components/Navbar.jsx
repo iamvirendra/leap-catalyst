@@ -47,7 +47,6 @@ const Navbar = () => {
     { label: "HOME", href: "#/" },
     { label: "ABOUT US", href: "#/about-us" },
     { label: "PROGRAMS", href: "#", hasDropdown: true, type: "programs" },
-    { label: "COMMUNITY", href: "#" },
     { label: "RESOURCES", href: "#", hasDropdown: true, type: "resources" },
   ];
 
