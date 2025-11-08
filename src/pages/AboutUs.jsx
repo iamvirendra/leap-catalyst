@@ -32,7 +32,7 @@ const AboutUs = () => {
           position: "relative",
           width: "100%",
           height: { xs: "250px", md: "450px" },
-          backgroundImage: `url(${isMobile ? "/about-banner-mobile.jpg" : "/about-banner-desktop.jpg"})`,
+          backgroundImage: `url('/about-banner.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "block",
@@ -48,27 +48,6 @@ const AboutUs = () => {
               "linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.1))",
           }}
         />
-
-        {/* Banner Text */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: { xs: "10px", md: "20px" },
-            left: { xs: "10px", md: "30px" },
-          }}
-        >
-          <Typography
-            variant={isMobile ? "h4" : "h3"}
-            sx={{
-              color: "#C41E3A",
-              fontWeight: "bold",
-              fontFamily: "Nunito, sans-serif",
-              textShadow: "0 3px 8px rgba(0,0,0,0.5)",
-            }}
-          >
-            About Us
-          </Typography>
-        </Box>
       </Box>
 
       {/* 🔹 Mission & Vision Cards */}
@@ -76,7 +55,7 @@ const AboutUs = () => {
         container
         spacing={6}
         sx={{
-          mt: { xs: 2, md: 5 }, // ✅ reduced gap here
+          mt: { xs: 2, md: 5 },
           px: { xs: 2, md: 8 },
           justifyContent: "center",
         }}
@@ -167,39 +146,121 @@ const AboutUs = () => {
 
       {/* 🔹 Our Values Section */}
       <Box
+      sx={{
+        mt: { xs: 6, md: 10 },
+        px: { xs: 3, md: 12 },
+        textAlign: "center",
+        pb: { xs: 6, md: 10 }, // 👈 added padding-bottom to create gap before Footer
+      }}
+    >
+      <Typography
+        variant="h4"
         sx={{
-          mt: { xs: 6, md: 10 },
-          px: { xs: 3, md: 12 },
-          textAlign: "center",
+          fontWeight: "bold",
+          color: "#B2454D",
+          mb: 4,
+          fontFamily: "Nunito, sans-serif",
         }}
       >
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: "bold",
-            color: "#B2454D",
-            mb: 3,
-            fontFamily: "Nunito, sans-serif",
-          }}
-        >
-          Our Values
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            color: "#444",
-            maxWidth: "900px",
-            mx: "auto",
-            lineHeight: 1.9,
-          }}
-        >
-          Integrity, collaboration, and innovation form the foundation of all
-          that we do. We are committed to supporting our partners and startups
-          with transparency, empathy, and a deep sense of purpose — ensuring
-          that every step we take drives collective success and societal
-          progress.
-        </Typography>
-      </Box>
+        Our Values
+      </Typography>
+
+      <Typography
+        variant="body1"
+        sx={{
+          color: "#444",
+          maxWidth: "900px",
+          mx: "auto",
+          mb: { xs: 4, md: 6 },
+          lineHeight: 1.9,
+        }}
+      >
+        Integrity, collaboration, and innovation form the foundation of all
+        that we do. We are committed to supporting our partners and startups
+        with transparency, empathy, and a deep sense of purpose — ensuring
+        that every step we take drives collective success and societal
+        progress.
+      </Typography>
+
+      {/* 🔹 Values Grid */}
+      <Grid
+        container
+        spacing={4}
+        justifyContent="center"
+        alignItems="stretch"
+      >
+        {[
+          {
+            title: "Integrity",
+            desc: "We believe in doing the right thing — always. Trust and transparency form the foundation of our relationships with founders, investors, and partners.",
+          },
+          {
+            title: "Collaboration",
+            desc: "Great companies are built together. We foster a culture of teamwork, empathy, and shared success across our network and community.",
+          },
+          {
+            title: "Innovation",
+            desc: "We encourage bold thinking and creative problem-solving to shape impactful, future-ready businesses through technology and insight.",
+          },
+          {
+            title: "Purpose",
+            desc: "We are driven by the mission to create meaningful change — empowering founders to build ventures that make a difference in society.",
+          },
+        ].map((value, index) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={6}
+            key={index}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Card
+              sx={{
+                height: "75%",
+                width: "75%",
+                maxWidth: 450,
+                borderRadius: 3,
+                boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                p: { xs: 2, md: 3 },
+                backgroundColor: "#fff",
+                textAlign: "left",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                  transition: "0.3s ease",
+                },
+              }}
+            >
+              <CardContent>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#B2454D",
+                    mb: 1.5,
+                    fontFamily: "Nunito, sans-serif",
+                  }}
+                >
+                  {value.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {value.desc}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
     </Box>
   );
 };
