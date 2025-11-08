@@ -8,8 +8,6 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-// import bannerDesktop from "../assets/about-banner-desktop.jpg";
-// import bannerMobile from "../assets/about-banner-mobile.jpg";
 
 const AboutUs = () => {
   const theme = useTheme();

@@ -19,7 +19,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import leapCatalystLogo from "../assets/leap-catalyst-logo.png";
 
 const Navbar = () => {
   const theme = useTheme();
@@ -85,7 +84,7 @@ const Navbar = () => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <a href="#/" style={{ textDecoration: "none" }}>
             <img
-              src={leapCatalystLogo}
+              src="/leap-catalyst-logo.png"
               alt="LEAP CATALYST Logo"
               style={{
                 height: isMobile ? "50px" : "100px",

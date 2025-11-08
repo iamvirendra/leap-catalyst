@@ -16,8 +16,6 @@ import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
-import leapCatalystLogo from "../assets/leap-catalyst-logo.png";
-import bgImage from "../assets/contact-bg.jpg"; // 👈 your background image
 
 function appendToLocalStorageArray(key, value) {
   try {
@@ -92,7 +90,7 @@ const Contact = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundImage: `url(${bgImage})`,
+        backgroundImage: `url('/contact-bg.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -134,7 +132,7 @@ const Contact = () => {
           <CardContent sx={{ flex: 1 }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}>
               <img
-                src={leapCatalystLogo}
+                src="/leap-catalyst-logo.png"
                 alt="Leap Catalyst Logo"
                 style={{
                   height: "60px",

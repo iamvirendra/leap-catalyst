@@ -8,7 +8,6 @@ import {
   Container,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import faqImage from "../assets/faq-image.jpg"; // replace with your image
 
 const faqs = [
   {
@@ -70,7 +69,7 @@ const Faq = () => {
         {/* Image */}
         <Box
           component="img"
-          src={faqImage}
+          src="/faq-image.jpg"
           alt="FAQ Illustration"
           sx={{
             width: "100%",
