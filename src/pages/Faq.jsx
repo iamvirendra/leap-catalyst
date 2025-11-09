@@ -11,70 +11,83 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const faqs = [
   {
-    question: "What is Leap Catalyst?",
+    question: "What exactly is Leap Catalyst?",
     answer:
-      "Leap Catalyst is an AI-enabled incubation platform built by founders, for founders. We support early-stage startups with mentorship, resources, and investment opportunities.",
+      "Leap Catalyst is an AI-powered startup incubation platform designed by founders, for founders. We help early-stage startups grow faster with smart tools, mentorship, and investor access.",
   },
   {
-    question: "Who can apply for the Thrive Accelerator Program?",
+    question: "Why should I choose Leap Catalyst?",
     answer:
-      "Any startup with a strong founding team, innovative idea, and market potential can apply for our Thrive Accelerator Program.",
+      "Because we’ve been in your shoes. Our programs blend real founder experience with AI-driven insights—so every piece of advice and connection truly fits your startup’s journey.",
   },
   {
-    question: "Is there any fee to join the accelerator?",
+    question: "Who can apply to join?",
     answer:
-      "There are no upfront charges. We invest our resources in exchange for equity based on the program structure.",
+      "If you’re an early-stage founder or a team with a solid idea, strong intent, and passion to build something scalable—we’d love to hear from you.",
   },
   {
-    question: "What kind of support does Leap Catalyst provide?",
+    question: "What kind of startups do you usually work with?",
     answer:
-      "We provide business mentorship, investor connections, market access, operational guidance, and community support.",
+      "We’re sector-agnostic but passionate about innovation—whether it’s in AI, consumer tech, sustainability, or new-age D2C.",
   },
   {
-    question: "Where is Leap Catalyst located?",
+    question: "How does Leap Catalyst support funding?",
     answer:
-      "We are headquartered in Jodhpur, with offices in Bengaluru, Mumbai, and Jaipur.",
+      "We connect you with our curated network of angels, VCs, and HNIs who invest in high-potential founders. We also help refine your pitch and fundraising strategy.",
   },
   {
-    question: "How can I contact the team?",
+    question: "What kind of mentorship can I expect?",
     answer:
-      "You can reach us through the Contact Us page or directly via email at office@marwaricatalysts.com.",
+      "You’ll work closely with experienced founders, domain experts, and industry mentors who’ve built and scaled startups themselves.",
   },
   {
-    question: "Do you invest in startups?",
+    question: "Is the program online or in-person?",
     answer:
-      "Yes, we partner with select startups through our accelerator programs and investor network.",
+      "Both! You can join virtually or be part of our hybrid sessions, depending on what suits your startup best.",
   },
   {
-    question: "How long is the Thrive program?",
+    question: "How long does the incubation last?",
     answer:
-      "Typically, the program runs for 3-6 months, depending on the startup’s stage and progress.",
+      "Our core programs typically run for 3–6 months, but our community and support last well beyond that.",
   },
   {
-    question: "What stage of startups do you support?",
+    question: "Does Leap Catalyst take equity?",
     answer:
-      "We focus primarily on early-stage startups (pre-seed to seed level) but also collaborate with growth-stage ventures.",
+      "We believe in win–win partnerships. Equity terms vary by program and level of engagement, always keeping founders’ interests first.",
   },
   {
-    question: "How can I apply?",
+    question: "How do I get started?",
     answer:
-      "You can apply through the Apply page on our website. Fill out the form and upload your pitch deck to get started.",
+      "Just apply through our website. Once we review your application, our team will reach out for the next steps if there’s a potential fit.",
   },
 ];
 
 const Faq = () => {
   return (
-    <Box sx={{ backgroundColor: "#F8F7F5", py: { xs: 6, md: 10 } }}>
+    <Box
+      sx={{
+        py: { xs: 6, md: 10 },
+        background: `
+          linear-gradient(135deg, rgba(255, 240, 240, 0.6), rgba(255, 255, 255, 0.8)),
+          url('https://www.transparenttextures.com/patterns/white-wall-3.png')
+        `,
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <Container maxWidth="md">
         {/* Image */}
         <Box
           component="img"
-          src="/faq-image.jpg"
+          src="/faq-image.png"
           alt="FAQ Illustration"
           sx={{
             width: "100%",
+            height: { xs: "180px", md: "250px" }, // reduced height
+            objectFit: "cover",
             borderRadius: "12px",
-            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.1)",
+            boxShadow: "0 6px 20px rgba(0, 0, 0, 0.1)",
             mb: 4,
           }}
         />
@@ -100,8 +113,12 @@ const Faq = () => {
             sx={{
               mb: 2,
               borderRadius: "8px !important",
+              backgroundColor: "rgba(255,255,255,0.85)",
+              backdropFilter: "blur(6px)",
               boxShadow: "0 3px 8px rgba(0,0,0,0.08)",
               "&::before": { display: "none" },
+              transition: "transform 0.2s ease-in-out",
+              "&:hover": { transform: "scale(1.01)" },
             }}
           >
             <AccordionSummary
