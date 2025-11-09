@@ -16,14 +16,14 @@ const Footer = () => {
 
   // Proper link mapping
   const programs = [
-    { label: "Aarambh 2.0", href: "#/programs/aarambh" },
-    { label: "Aaroh - The Next Leap", href: "#/programs/aaroh" },
+    { label: "Aarambh 2.0", href: "/programs/aarambh" },
+    { label: "Aaroh - The Next Leap", href: "/programs/aaroh" },
   ];
 
   const resources = [
-    { label: "Blog", href: "#/blog" },
-    { label: "FAQ", href: "#/faq" },
-    { label: "Contact", href: "#/contact" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const locations = [{ name: "Lucknow" }, { name: "Gurugram" }];
@@ -77,7 +77,7 @@ const Footer = () => {
               alignItems: "center",
             }}
           >
-            <a href="#/">
+            <a href="/">
               <img
                 src="/leap-catalyst-logo.png"
                 alt="LEAP CATALYST Logo"

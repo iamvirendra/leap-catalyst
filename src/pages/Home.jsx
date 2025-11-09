@@ -300,7 +300,7 @@ const Home = () => {
 
             <Button
             variant="contained"
-            href="#/apply"
+            href="/apply"
             sx={{
                 backgroundColor: "#C41E3A",
                 color: "#FFFFFF",
@@ -394,14 +394,14 @@ const Home = () => {
                 title: "Idea Submission",
                 desc: "Have a startup idea? Submit it for initial review and feedback.",
                 button: "Submit Idea",
-                link: "#/apply",
+                link: "/apply",
               },
               {
                 icon: <AttachMoneyOutlinedIcon sx={{ color: "#C41E3A", fontSize: 40 }} />,
                 title: "Connect With Us",
                 desc: "Looking for funding? Let’s discuss your investment requirements.",
                 button: "Contact With Us",
-                link: "#/contact",
+                link: "/contact",
               },
             ].map((card, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>

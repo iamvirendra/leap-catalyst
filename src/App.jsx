@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -13,70 +15,33 @@ import Aarambh from "./pages/Aarambh";
 import Aaroh from "./pages/Aaroh";
 
 function App() {
-  const [route, setRoute] = useState(window.location.hash.toLowerCase());
-
-  useEffect(() => {
-    const onHashChange = () => {
-      const newRoute = window.location.hash.toLowerCase();
-      setRoute(newRoute);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    const onLinkClick = (e) => {
-      const href = e.target.closest("a")?.getAttribute("href");
-      if (href && href.startsWith("#") && href === window.location.hash) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    };
-
-    window.addEventListener("hashchange", onHashChange);
-    document.addEventListener("click", onLinkClick);
-
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-      document.removeEventListener("click", onLinkClick);
-    };
-  }, []);
-
-  const getPage = () => {
-    if (route.startsWith("#/blog/")) return <BlogDetail />;
-
-    switch (route) {
-      case "#/blog":
-        return <BlogList />;
-      case "#/apply":
-        return <Apply />;
-      case "#/contact":
-        return <Contact />;
-      case "#/faq":
-        return <Faq />;
-      case "#/programs/aarambh":
-        return <Aarambh />;
-      case "#/programs/aaroh":
-        return <Aaroh />;
-      case "#/about-us":
-        return <AboutUs />;
-      default:
-        return <Hero />;
-    }
-  };
-
   return (
-    <>
+    <Router>
+      <ScrollToTop />
       <Navbar />
       <AnimatePresence mode="wait">
         <motion.div
-          key={route}
+          key={window.location.pathname}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          {getPage()}
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/apply" element={<Apply />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/blog" element={<BlogList />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/programs/aarambh" element={<Aarambh />} />
+            <Route path="/programs/aaroh" element={<Aaroh />} />
+            <Route path="/about-us" element={<AboutUs />} />
+          </Routes>
         </motion.div>
       </AnimatePresence>
       <Footer />
-    </>
+    </Router>
   );
 }
 

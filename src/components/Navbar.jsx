@@ -34,21 +34,21 @@ const Navbar = () => {
 
   // Dropdown sub-items
   const programsSubItems = [
-    { label: "Aarambh 2.0", href: "#/programs/aarambh" },
-    { label: "Aaroh - The Next Leap", href: "#/programs/aaroh" },
+    { label: "Aarambh 2.0", href: "/programs/aarambh" },
+    { label: "Aaroh - The Next Leap", href: "/programs/aaroh" },
   ];
 
   const resourceSubItems = [
-    { label: "Blog", href: "#/blog" },
-    { label: "FAQs", href: "#/faq" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQs", href: "/faq" },
   ];
 
   // Navigation
   const navItems = [
-    { label: "HOME", href: "#/" },
-    { label: "ABOUT US", href: "#/about-us" },
-    { label: "PROGRAMS", href: "#", hasDropdown: true, type: "programs" },
-    { label: "RESOURCES", href: "#", hasDropdown: true, type: "resources" },
+    { label: "HOME", href: "/" },
+    { label: "ABOUT US", href: "/about-us" },
+    { label: "PROGRAMS", href: "", hasDropdown: true, type: "programs" },
+    { label: "RESOURCES", href: "", hasDropdown: true, type: "resources" },
   ];
 
   // Dropdown hover handlers
@@ -86,7 +86,7 @@ const Navbar = () => {
         >
           {/* ---------- LOGO ---------- */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <a href="#/" style={{ textDecoration: "none" }}>
+            <a href="/" style={{ textDecoration: "none" }}>
               <img
                 src="/leap-catalyst-logo.png"
                 alt="LEAP CATALYST Logo"
@@ -247,7 +247,7 @@ const Navbar = () => {
               {/* ---------- PITCH BUTTON ---------- */}
               <Button
                 variant="contained"
-                href="#/apply"
+                href="/apply"
                 sx={{
                   backgroundColor: "#C41E3A",
                   color: "#FFFFFF",
@@ -350,7 +350,7 @@ const Navbar = () => {
                   <ListItem disablePadding>
                     <ListItemButton
                       component="a"
-                      href="#/apply"
+                      href="/apply"
                       onClick={() => setOpenDrawer(false)}
                     >
                       <ListItemText

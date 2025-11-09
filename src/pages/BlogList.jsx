@@ -106,7 +106,7 @@ const BlogList = () => {
                 <Box sx={{ mt: "auto" }}>
                     <Button
                     variant="contained"
-                    href={`#/blog/${blog.id}`}
+                    href={`/blog/${blog.id}`}
                     sx={{
                         backgroundColor: "#B2454D",
                         "&:hover": { backgroundColor: "#A03E47" },
