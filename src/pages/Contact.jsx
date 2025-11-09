@@ -17,18 +17,6 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
 
-function appendToLocalStorageArray(key, value) {
-  try {
-    const existingRaw = localStorage.getItem(key);
-    const existing = existingRaw ? JSON.parse(existingRaw) : [];
-    existing.push(value);
-    localStorage.setItem(key, JSON.stringify(existing));
-    return true;
-  } catch (e) {
-    console.error("Failed saving form", e);
-    return false;
-  }
-}
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -63,25 +51,36 @@ const Contact = () => {
       return;
     }
 
-    const payload = { ...form, createdAt: new Date().toISOString() };
-    const saved = appendToLocalStorageArray("ContactSubmissions", payload);
-    setSubmitting(false);
-    setResult({
-      open: true,
-      ok: saved,
-      message: saved
-        ? "Thank you for contacting us!"
-        : "Failed to save. Please try again.",
-    });
+    try {
+      const res = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    if (saved) {
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        website: "",
-        message: "",
+      const data = await res.json();
+      setSubmitting(false);
+
+      if (res.ok) {
+        setResult({ open: true, ok: true, message: "Thank you for contacting us!" });
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          website: "",
+          message: "",
+        });
+      } else {
+        setResult({ open: true, ok: false, message: data.error || "Failed to submit." });
+      }
+    } catch (error) {
+      console.error("Submit error:", error);
+      setSubmitting(false);
+      setResult({
+        open: true,
+        ok: false,
+        message: "Network error. Please try again.",
       });
     }
   };
@@ -253,7 +252,6 @@ const Contact = () => {
                 </Grid>
                 <Grid item>
                   <TextField
-                    type="url"
                     label="Company Website"
                     value={form.website}
                     onChange={updateField("website")}
