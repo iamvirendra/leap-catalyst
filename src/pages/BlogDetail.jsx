@@ -196,7 +196,7 @@ const BlogDetail = () => {
     return (
       <Container sx={{ py: 10, textAlign: "center" }}>
         <Typography variant="h5">Blog not found.</Typography>
-        <Button href="#/blog" sx={{ mt: 3 }} variant="outlined">
+        <Button href="/blog" sx={{ mt: 3 }} variant="outlined">
           Back to Blogs
         </Button>
       </Container>
@@ -242,7 +242,7 @@ const BlogDetail = () => {
 
         {/* Back Button */}
         <Button
-          href="#/blog"
+          href="/blog"
           sx={{
             mt: 4,
             backgroundColor: "#B2454D",

@@ -288,7 +288,7 @@ const Aarambh = () => {
           <Button
             variant="contained"
             size="large"
-            href="#/apply"
+            href="/apply"
             sx={{
               background: "linear-gradient(90deg, #B2454D 0%, #A03E47 100%)",
               color: "#fff",
