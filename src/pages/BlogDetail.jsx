@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Button } from "@mui/material";
 import ReactMarkdown from "react-markdown";
+import { useParams } from "react-router-dom";
 
 // Blog data (same as before)
 const blogs = [
@@ -189,7 +190,8 @@ If you are a founder looking to build with confidence, it’s time to take your 
 ];
 
 const BlogDetail = () => {
-  const blogId = parseInt(window.location.hash.split("/")[2], 10);
+  const { id } = useParams();
+  const blogId = parseInt(id, 10);
   const blog = blogs.find((b) => b.id === blogId);
 
   if (!blog) {
