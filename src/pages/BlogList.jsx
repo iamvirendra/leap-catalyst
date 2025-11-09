@@ -5,33 +5,33 @@ import { Box, Container, Typography, Card, CardContent, CardMedia, Button, Grid 
 const blogs = [ 
     { 
         id: 1, 
-        title: "How AI is Transforming Startup Ecosystems", 
-        image: "/blog1.jpg", 
-        excerpt: "Discover how artificial intelligence is revolutionizing the startup world...", 
+        title: "The Future of the Startup Ecosystem in India", 
+        image: "The-Future-of-the-Startup-Ecosystem-in-India.png", 
+        excerpt: "India’s startup ecosystem has entered a phase of real momentum. From being a niche activity...", 
     }, 
     { 
         id: 2, 
-        title: "5 Mistakes Early-Stage Founders Should Avoid", 
-        image: "/blog2.jpg", 
-        excerpt: "Launching your startup? Avoid these common mistakes that kill early traction...", 
+        title: "Why Most Startups in India Fail", 
+        image: "/Why-Most-Startups-in-India-Fail.jpeg", 
+        excerpt: "India is bursting with startup energy. Every day we see fresh ideas, bright teams, and bold ambitions. Yet, for all the enthusiasm...", 
     }, 
     { 
         id: 3, 
-        title: "The Future of Incubation: From Traditional to AI-Enabled", 
-        image: "/blog3.jpg", 
-        excerpt: "Explore the evolution of startup incubation and how AI-driven accelerators are changing the game.", 
+        title: "How to Choose the Right Investor Fit for Your Startup", 
+        image: "/How-to-Choose-the-Right-Investor-Fit-for-Your-Startup.png", 
+        excerpt: "Explore the evolution of startup incubation and how AI-driven accelerators are changing the gameFinding investors is not just....", 
     }, 
     { 
         id: 4, 
-        title: "The Future of Incubation", 
-        image: "/blog4.jpg", 
-        excerpt: "Explore the evolution of startup incubation and how AI-driven accelerators are changing the game.", 
+        title: "Foundation for Sustainable Growth in Early Startups", 
+        image: "/Foundation-for-Sustainable.jpg", 
+        excerpt: "Explore the evolution of startup incubation and how AI-driven accelerators are changing the gameExplore the evolution of startup iEvery startup begins with a spark of excitement. It starts with a dream, a simple idea that....", 
     }, 
     { 
         id: 5, 
-        title: "From Traditional to AI-Enabled", 
-        image: "/blog5.jpg", 
-        excerpt: "Explore the evolution of startup incubation and how AI-driven accelerators are changing the game.", 
+        title: "The Rise of AI in Startup Incubation", 
+        image: "/The-Rise-of-AI-in-Startup.jpg", 
+        excerpt: "It’s no secret that the startup ecosystem in India is evolving faster than ever. With thousands....", 
     }
 ];
 
@@ -76,7 +76,7 @@ const BlogList = () => {
                 display: "flex",
                 flexDirection: "column",
                 flexGrow: 1, // fill the Grid cell width
-                width: "100%", // ensures it takes full grid width
+                width: "330px", // ensures it takes full grid width
                 transition: "transform 0.28s ease, box-shadow 0.28s ease",
                 "&:hover": {
                     transform: "translateY(-6px)",
