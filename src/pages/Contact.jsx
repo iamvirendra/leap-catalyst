@@ -90,7 +90,7 @@ const Contact = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundImage: `url('/contact-bg.jpg')`,
+        backgroundImage: `url('/Contact.webp')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -150,12 +150,12 @@ const Contact = () => {
 
             <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
               <EmailOutlinedIcon sx={{ mr: 1 }} />
-              <Typography>office@marwaricatalysts.com</Typography>
+              <Typography>leapcatalyst@gmail.com</Typography>
             </Box>
 
             <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
               <PhoneOutlinedIcon sx={{ mr: 1 }} />
-              <Typography>+91-8302800536, +91-8824011612</Typography>
+              <Typography>+91-6393198180, +91-8299669249</Typography>
             </Box>
 
             <Divider sx={{ borderColor: "rgba(255,255,255,0.3)", my: 2 }} />
@@ -163,22 +163,18 @@ const Contact = () => {
             <Box sx={{ display: "flex", alignItems: "flex-start", mb: 1.5 }}>
               <LocationOnOutlinedIcon sx={{ mr: 1, mt: 0.3 }} />
               <Typography variant="body2">
-                <strong>Jodhpur</strong> — Dream Heights, CYB-5, Cyber Park,
-                Heavy Industrial Area, Jodhpur, Rajasthan
+                <strong>Gurugram</strong> — AIPH Tower, Udyog Vihar Phase IV,
+                Gurugram, Haryana
               </Typography>
             </Box>
 
             <Box sx={{ display: "flex", alignItems: "flex-start", mb: 1.5 }}>
               <ApartmentOutlinedIcon sx={{ mr: 1, mt: 0.3 }} />
               <Typography variant="body2">
-                <strong>Bengaluru</strong> — 2nd Floor, No. 2577, 26th Main,
-                13th Cross, Sector 1, HSR Layout, Bengaluru 560087
+                <strong>Lucknow</strong> — 48, Anand Lok Colony, Vijynant Khand,
+                Lucknow, Uttar Pradesh
               </Typography>
             </Box>
-
-            <Typography variant="body2">
-              <strong>Mumbai</strong> | <strong>Jaipur</strong>
-            </Typography>
           </CardContent>
         </Grid>
 

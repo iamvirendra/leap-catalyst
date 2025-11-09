@@ -144,10 +144,10 @@ const Apply = () => {
             variant="h6"
             sx={{ fontWeight: "bold", fontFamily: "Nunito, sans-serif" }}
           >
-            Unlock the door to growth – Start your application now!
+            Start your application now!
           </Typography>
           <Typography variant="body2">
-            Application Deadline: 30 Nov 25
+            Application Deadline:31 December 25
           </Typography>
         </Box>
 
@@ -204,7 +204,6 @@ const Apply = () => {
 
           <Grid item>
             <TextField
-              type="url"
               label="Company's Website URL"
               value={form.website}
               onChange={updateField("website")}
@@ -255,13 +254,12 @@ const Apply = () => {
           </Grid>
 
           <Grid item>
-            <Typography variant="subtitle2" sx={{ mb: 1 }}>
-              Pitch Deck *
-            </Typography>
-            <Button variant="outlined" component="label" fullWidth>
-              {form.pitchDeck ? form.pitchDeck.name : "Upload Pitch Deck"}
-              <input type="file" hidden onChange={updateField("pitchDeck")} />
-            </Button>
+            <TextField
+              label="Upload Pitch Deck Drive Link"
+              value={form.pitchDeck}
+              onChange={updateField("pitchDeck")}
+              fullWidth
+            />
           </Grid>
 
           <Grid item>
