@@ -8,9 +8,37 @@ import {
   CardContent,
   Button,
 } from "@mui/material";
-import { motion } from "framer-motion"; // For smooth animations
+import { motion } from "framer-motion";
 
-const Program = () => {
+const steps = [
+  {
+    month: 1,
+    title: "Strategic Acceleration Onboarding",
+    desc: "Kickstart your journey with in-depth business audits, performance assessments, and tailored roadmaps designed for structured and sustainable scaling.",
+  },
+  {
+    month: 2,
+    title: "Data-Driven Growth Sprint",
+    desc: "Refine your business strategy using AI-powered insights, expert-led sessions, and performance tracking to accelerate traction and measurable outcomes.",
+  },
+  {
+    month: 3,
+    title: "Founder-Led Mentorship",
+    desc: "Gain actionable guidance directly from experienced startup founders who have scaled successfully, sharing practical growth tactics and real-world learnings.",
+  },
+  {
+    month: 4,
+    title: "Collaborative Ecosystem",
+    desc: "Connect with investors, entrepreneurs, and domain experts through exclusive meetups and community interactions that fuel collaboration and partnerships.",
+  },
+  {
+    month: 5,
+    title: "Investor-Ready Demo Day",
+    desc: "Conclude the 5 month accelerator with a high-impact demo day featuring leading investors and partners eager to support emerging, high-potential ventures.",
+  },
+];
+
+const Aarambh = () => {
   return (
     <Box
       sx={{
@@ -47,13 +75,13 @@ const Program = () => {
             variant="h2"
             sx={{
               color: "#B2454D",
-              fontWeight: 800,
+              fontWeight: 600,
               mb: 2,
               fontSize: { xs: "2rem", md: "3.5rem" },
               letterSpacing: "0.5px",
             }}
           >
-            Scale from 0× to 10×
+            Scale from 10× to 50×
           </Typography>
 
           <Typography
@@ -66,9 +94,7 @@ const Program = () => {
               lineHeight: 1.6,
             }}
           >
-            AARAMBH 2.0 — Leap Catalyst’s flagship incubation program empowering
-            early-stage founders to validate ideas, refine models, and build
-            impactful ventures with mentorship, capital, and growth guidance.
+            AAROH — Leap Catalyst’s flagship program revives distressed businesses into thriving ventures through innovation, strategy, and leadership.
           </Typography>
         </Box>
 
@@ -91,16 +117,11 @@ const Program = () => {
             variant="h4"
             sx={{ color: "#B2454D", fontWeight: "bold", mb: 2 }}
           >
-            What is AARAMBH 2.0?
+            What is AAROH?
           </Typography>
 
           <Typography variant="body1" sx={{ color: "#555", lineHeight: 1.8 }}>
-            AARAMBH 2.0 is a flagship incubation program by Leap Catalyst crafted
-            for early-stage startups at the idea or proof-of-concept stage. Our
-            AI-enabled platform empowers founders to validate ideas, refine
-            business models, and set the right foundation for growth. With expert
-            guidance and tailored support, we help startups take confident first
-            steps toward building impactful and scalable ventures.
+            AAROH: The Next Leap is designed for growing startups that have gained traction of up to six lakh rupees in the past year. Through our AI-driven platform, founders access mentorship, investor networks, and peer communities to accelerate growth. Leap Catalyst helps them avoid common scaling pitfalls and equips them with the insights and strategies needed to take their venture to the next level with confidence.
           </Typography>
         </Box>
 
@@ -115,38 +136,38 @@ const Program = () => {
         <Grid container spacing={3} sx={{ mb: { xs: 6, md: 10 } }}>
           {[
             {
-              title: "₹25 L Kickstart Investment",
-              desc: "Fuel your vision with the capital to move fast and make impact",
+              title: "Scaling, Structuring, and Strategic Growth",
+              desc: "Accelerate your startup’s journey with practical guidance in business structuring, growth planning, and forming strategic partnerships for long-term scalability and success.",
             },
             {
-              title: "₹50 L Scale-up Funding",
-              desc: "Get the boost you need to expand and grow stronger",
+              title: "Collaborative Workspace and Growth Environment",
+              desc: "Access a vibrant co-working space built to inspire innovation, teamwork, and creativity — a thriving ecosystem that empowers founders to collaborate and grow together.",
             },
             {
-              title: "3–4 Months of Acceleration",
-              desc: "An intensive journey to turn your startup into a scalable business",
+              title: "Funding Opportunities up to ₹50 Lakhs",
+              desc: "Gain curated funding access through private investors, institutional partners, and government grants tailored to help your startup achieve sustainable and scalable growth.",
             },
             {
-              title: "Mentorship from Trailblazers",
-              desc: "Learn directly from founders and investors who’ve done it before",
+              title: "Powerful Network of Investors and Industry Leaders",
+              desc: "Engage directly with an exclusive community of investors, unicorn founders, and industry experts who offer insights, connections, and strategic opportunities for growth.",
             },
             {
-              title: "Investor Access",
-              desc: "Connect with top VCs and angel networks ready to back bold ideas",
+              title: "Pro-Level AI Tools and Decision Reports",
+              desc: "Leverage Leap Catalyst’s next-gen AI tools and analytics dashboards to gain data-driven insights, monitor performance, and make intelligent, growth-focused decisions.",
             },
             {
-              title: "Co-working Access",
-              desc: "Build, collaborate, and grow from the heart of India’s startup hubs",
+              title: "Comprehensive Professional and Compliance Support",
+              desc: "Get expert guidance for legal, financial, and IPR compliance, including trademarks, patents, ISO certification, DPIIT recognition, and major startup competition support.",
             },
           ].map((h, idx) => (
-            <Grid item xs={12} sm={6} md={4} key={idx}>
+            <Grid item xs={12} key={idx}>
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <Card
                   sx={{
-                    height: "100%",
+                    width: "100%",
                     borderRadius: 3,
                     p: 2,
                     backgroundColor: "#fff",
@@ -154,6 +175,7 @@ const Program = () => {
                     transition: "all 0.3s ease",
                     "&:hover": {
                       boxShadow: "0 6px 25px rgba(0,0,0,0.15)",
+                      transform: "translateY(-5px)",
                     },
                   }}
                 >
@@ -168,8 +190,7 @@ const Program = () => {
                     >
                       {h.title}
                     </Typography>
-
-                    <Typography variant="body2" sx={{ color: "#555" }}>
+                    <Typography variant="body1" sx={{ color: "#555", lineHeight: 1.7 }}>
                       {h.desc}
                     </Typography>
                   </CardContent>
@@ -179,96 +200,85 @@ const Program = () => {
           ))}
         </Grid>
 
-        {/* ---------- Acceleration Timeline ---------- */}
-        <Box sx={{ mb: { xs: 6, md: 10 } }}>
+        {/* ---------- Program Timeline ---------- */}
+        <Box sx={{ mb: 10 }}>
           <Typography
             variant="h4"
-            sx={{ color: "#B2454D", fontWeight: "bold", mb: 4 }}
+            sx={{
+              color: "#B2454D",
+              fontWeight: "bold",
+              mb: 6,
+              textAlign: "center",
+              fontFamily: "Nunito, sans-serif",
+            }}
           >
-            Acceleration Timeline
+            Program Timeline
           </Typography>
 
-          <Grid container spacing={2}>
-            {[
-              {
-                month: 1,
-                title: "Strong Start with Expert Onboarding",
-                points: [
-                  "Ecosystem Integration",
-                  "Startup Health Check",
-                  "Tool Access",
-                ],
+          <Box
+            sx={{
+              position: "relative",
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                left: "20px",
+                top: 0,
+                bottom: 0,
+                width: "3px",
+                backgroundColor: "#B2454D",
               },
-              {
-                month: 2,
-                title: "Structured Growth Path",
-                points: [
-                  "Expert Sessions",
-                  "KPI Identification",
-                  "Strategic Planning",
-                ],
-              },
-              {
-                month: 3,
-                title: "Personalized Mentorship & Founder Community Access",
-                points: [
-                  "Mentor Matching",
-                  "Entrepreneur Insights",
-                  "Community Networking",
-                ],
-              },
-              {
-                month: 4,
-                title: "Demo Day & Funding Gateway",
-                points: [
-                  "Pitch Readiness",
-                  "KPI Evaluation",
-                  "Investor Connect",
-                ],
-              },
-            ].map((step) => (
-              <Grid item xs={12} md={3} key={step.month}>
-                <motion.div whileHover={{ y: -5 }}>
-                  <Card
-                    sx={{
-                      p: 3,
-                      borderRadius: 3,
-                      backgroundColor: "#fff",
-                      boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                      transition: "box-shadow 0.3s ease",
-                      "&:hover": {
-                        boxShadow: "0 6px 25px rgba(0,0,0,0.15)",
-                      },
-                    }}
+            }}
+          >
+            {steps.map((step) => (
+              <Box
+                key={step.month}
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  position: "relative",
+                  mb: 6,
+                  pl: 8,
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "absolute",
+                    left: "9px",
+                    width: "22px",
+                    height: "22px",
+                    borderRadius: "50%",
+                    backgroundColor: "#B2454D",
+                    boxShadow: "0 0 0 5px #FCEBEC",
+                  }}
+                />
+                <Box
+                  sx={{
+                    background: "#fff",
+                    borderRadius: 2,
+                    p: 3,
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                    width: "100%",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{ fontWeight: "bold", color: "#B2454D" }}
                   >
-                    <Typography
-                      variant="h6"
-                      sx={{ fontWeight: "bold", color: "#B2454D", mb: 1 }}
-                    >
-                      Month {step.month}
-                    </Typography>
-
-                    <Typography
-                      variant="subtitle1"
-                      sx={{ fontWeight: "medium", mb: 1 }}
-                    >
-                      {step.title}
-                    </Typography>
-
-                    {step.points.map((pt, i) => (
-                      <Typography
-                        key={i}
-                        variant="body2"
-                        sx={{ color: "#555", pl: 1 }}
-                      >
-                        • {pt}
-                      </Typography>
-                    ))}
-                  </Card>
-                </motion.div>
-              </Grid>
+                    Month {step.month}
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontWeight: 600, mb: 1 }}
+                  >
+                    {step.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.8 }}>
+                    {step.desc}
+                  </Typography>
+                </Box>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Box>
 
         {/* ---------- Call to Action ---------- */}
@@ -304,4 +314,4 @@ const Program = () => {
   );
 };
 
-export default Program;
+export default Aarambh;

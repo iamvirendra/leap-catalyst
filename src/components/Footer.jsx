@@ -17,7 +17,7 @@ const Footer = () => {
   // Proper link mapping
   const programs = [
     { label: "Aarambh 2.0", href: "#/programs/aarambh" },
-    { label: "Aaroh", href: "#/programs/aaroh" },
+    { label: "Aaroh - The Next Leap", href: "#/programs/aaroh" },
   ];
 
   const resources = [
