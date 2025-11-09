@@ -47,61 +47,46 @@ const Apply = () => {
     e.preventDefault();
     setSubmitting(true);
 
-    if (!form.name || !form.email || !form.company) {
+    if (!form.name || !form.email || !form.phone) {
       setResult({
         open: true,
         ok: false,
-        message: "Please fill required fields (Name, Email, Company).",
+        message: "Please fill required fields (Name, Email, Phone).",
       });
       setSubmitting(false);
       return;
     }
 
-    const payload = {
-      ...form,
-      createdAt: new Date().toISOString(),
-      pitchDeck: form.pitchDeck?.name || "Not uploaded",
-    };
-
-    let saved = false;
-
     try {
-      const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbw14upUqagQIVEm-7RpNWGfdF2XImRIAmxICZWIE34I0WbscsXaol7Nfs5lcMZ6EilxMQ/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
-      const result = await res.json();
-      saved = result.success;
-    } catch (err) {
-      console.error(err);
-    }
+      const res = await fetch("http://localhost:5000/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    setSubmitting(false);
-    setResult({
-      open: true,
-      ok: saved,
-      message: saved
-        ? "Application submitted successfully!"
-        : "Failed to save. Please try again.",
-    });
+      const data = await res.json();
+      setSubmitting(false);
 
-    if (saved) {
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        linkedin: "",
-        company: "",
-        website: "",
-        revenue: "",
-        description: "",
-        expectations: "",
-        hearAbout: "",
-        pitchDeck: null,
+      if (res.ok) {
+        setResult({ open: true, ok: true, message: "Thank you for contacting us!" });
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          website: "",
+          message: "",
+        });
+      } else {
+        setResult({ open: true, ok: false, message: data.error || "Failed to submit." });
+      }
+    } catch (error) {
+      console.error("Submit error:", error);
+      setSubmitting(false);
+      setResult({
+        open: true,
+        ok: false,
+        message: "Network error. Please try again.",
       });
     }
   };
@@ -243,7 +228,7 @@ const Apply = () => {
 
           <Grid item>
             <TextField
-              label="Expectations from our Thrive Accelerator Program"
+              label="Expectations from our Accelerator Program"
               value={form.expectations}
               onChange={updateField("expectations")}
               fullWidth
@@ -265,7 +250,7 @@ const Apply = () => {
           <Grid item>
             <TextField
               select
-              label="How did you hear about Marwari Catalysts?"
+              label="How did you hear about Us?"
               value={form.hearAbout}
               onChange={updateField("hearAbout")}
               fullWidth
