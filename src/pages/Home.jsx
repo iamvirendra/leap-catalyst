@@ -55,88 +55,116 @@ const Home = () => {
           }}
         />
 
-        <Container sx={{ position: "relative", zIndex: 2 }}>
-          <Typography variant="h5" sx={{ fontWeight: "300", mb: 2 }}>
+        <Container
+          sx={{
+            position: "relative",
+            zIndex: 2,
+            textAlign: { xs: "center", md: "left" }, // Center on mobile
+            px: { xs: 2, sm: 4 },
+            py: { xs: 6, md: 8 },
+          }}
+        >
+          {/* Heading Section */}
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: "300",
+              mb: 2,
+              fontSize: { xs: "1rem", md: "1.25rem" },
+            }}
+          >
             AI ENABLED INCUBATOR
           </Typography>
+
           <Typography
             variant="h2"
             sx={{
-              mb: 4,
+              mb: 3,
               fontWeight: "bold",
-              maxWidth: "600px",
               lineHeight: 1.2,
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3.5rem" },
+              maxWidth: { md: "600px" },
+              mx: { xs: "auto", md: 0 },
             }}
           >
             BUILT BY FOUNDERS, <br /> FOR THE FOUNDERS
           </Typography>
+
           <Typography
             variant="h6"
-            sx={{ mb: 4, maxWidth: "600px", fontWeight: "300" }}
+            sx={{
+              mb: 4,
+              fontWeight: "300",
+              fontSize: { xs: "1rem", sm: "1.1rem" },
+              maxWidth: { md: "600px" },
+              mx: { xs: "auto", md: 0 },
+              color: "#e0e0e0",
+            }}
           >
-            Our core value is simple: helping new and budding startups not just
-            grow, but truly excel.
+            Our core value is simple: helping new and budding startups not just grow,
+            but truly excel.
           </Typography>
+
+          {/* Responsive Stats Cards */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: "center",
+              justifyContent: { xs: "center", md: "flex-start" },
+              gap: { xs: 2, sm: 3, md: 4 },
+              mt: 4,
+            }}
+          >
+            {[
+              { label: "Portfolio Startups", value: portfolioCount, suffix: "+" },
+              { label: "Cofounder Club", value: clubCount, suffix: "+" },
+            ].map((card, index) => (
+              <Box
+                key={index}
+                sx={{
+                  background: "rgba(255, 255, 255, 0.12)",
+                  border: "1px solid rgba(255, 255, 255, 0.25)",
+                  borderRadius: "16px",
+                  p: { xs: 2, sm: 3 },
+                  minWidth: { xs: 160, sm: 180 },
+                  textAlign: "center",
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
+                  backdropFilter: "blur(8px)",
+                  transition: "all 0.4s ease",
+                  "&:hover": {
+                    transform: "translateY(-6px)",
+                    background: "rgba(255,255,255,0.18)",
+                  },
+                }}
+              >
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#FFFFFF",
+                    fontFamily: "Nunito, sans-serif",
+                    fontSize: { xs: "2rem", md: "2.5rem" },
+                  }}
+                >
+                  {card.value}
+                  {card.suffix}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    color: "#f1f1f1",
+                    fontFamily: "Nunito, sans-serif",
+                  }}
+                >
+                  {card.label}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
         </Container>
 
-        {/* Floating stats cards */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: { xs: "20px", md: "40px" },
-            right: { xs: "10px", md: "60px" },
-            display: "flex",
-            gap: 3,
-            flexDirection: { xs: "column", sm: "row" },
-            zIndex: 3,
-          }}
-        >
-          {[
-            { label: "Portfolio Startups", value: portfolioCount, suffix: "+" },
-            { label: "Cofounder Club", value: clubCount, suffix: "+" },
-          ].map((card, index) => (
-            <Box
-              key={index}
-              sx={{
-                background: "rgba(255, 255, 255, 0.12)",
-                border: "1px solid rgba(255, 255, 255, 0.25)",
-                borderRadius: "16px",
-                p: { xs: 2, sm: 3 },
-                minWidth: { xs: 130, sm: 180 },
-                textAlign: "center",
-                boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-                backdropFilter: "blur(8px)",
-                transition: "all 0.4s ease",
-                "&:hover": {
-                  transform: "translateY(-6px)",
-                  background: "rgba(255,255,255,0.18)",
-                },
-              }}
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  fontWeight: "bold",
-                  color: "#FFFFFF",
-                  fontFamily: "Nunito, sans-serif",
-                }}
-              >
-                {card.value}
-                {card.suffix}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  fontSize: "0.95rem",
-                  color: "#f1f1f1",
-                  fontFamily: "Nunito, sans-serif",
-                }}
-              >
-                {card.label}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
       </Box>
 
       {/* Who We Are Section */}
@@ -411,7 +439,7 @@ const Home = () => {
                     borderRadius: "16px",
                     backdropFilter: "blur(8px)",
                     background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05))",
+                      "linear-gradient(115deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05))",
                     border: "1px solid rgba(255,255,255,0.25)",
                     boxShadow: "0 6px 15px rgba(0,0,0,0.2)",
                     transition: "all 0.35s ease",
