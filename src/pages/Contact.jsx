@@ -52,7 +52,7 @@ const Contact = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/contact", {
+      const res = await fetch("https://leap-catalyst-backend.onrender.com/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -170,7 +170,7 @@ const Contact = () => {
             <Box sx={{ display: "flex", alignItems: "flex-start", mb: 1.5 }}>
               <ApartmentOutlinedIcon sx={{ mr: 1, mt: 0.3 }} />
               <Typography variant="body2">
-                <strong>Lucknow</strong> — 48, Anand Lok Colony, Vijynant Khand,
+                <strong>Lucknow</strong> — 11th Floor, Summit Building, Vibhuti Khand, Gomti Nagar,
                 Lucknow, Uttar Pradesh
               </Typography>
             </Box>
