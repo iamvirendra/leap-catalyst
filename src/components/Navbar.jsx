@@ -34,8 +34,8 @@ const Navbar = () => {
 
   // Dropdown sub-items
   const programsSubItems = [
-    { label: "Aarambh 2.0", href: "/programs/aarambh" },
-    { label: "Aaroh - The Next Leap", href: "/programs/aaroh" },
+    { label: "Aarambh 2.0", href: "/aarambh" },
+    { label: "Aaroh - The Next Leap", href: "/aaroh" },
   ];
 
   const resourceSubItems = [
