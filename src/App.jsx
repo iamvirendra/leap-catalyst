@@ -34,8 +34,8 @@ function App() {
             <Route path="/faq" element={<Faq />} />
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
-            <Route path="/programs/aarambh" element={<Aarambh />} />
-            <Route path="/programs/aaroh" element={<Aaroh />} />
+            <Route path="/aarambh" element={<Aarambh />} />
+            <Route path="/aaroh" element={<Aaroh />} />
             <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </motion.div>
